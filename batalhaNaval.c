@@ -14,17 +14,30 @@ int main(){
         
     }
 
-    //navio horizontal (linha2, colunas 3-5)
+    //navio horizontal (linha2, colunas C,D,E)
 
     tabuleiro[1][2] = 3;
     tabuleiro[1][3] = 3;
     tabuleiro[1][4] = 3;
 
-    //navio vertical (coluna 7, linhas 6-8)
+    //navio vertical (coluna G, linhas 6,7,8)
 
     tabuleiro[5][6] = 3;
     tabuleiro[6][6] = 3;
     tabuleiro[7][6] = 3;
+
+    //navio diagonal (linhas 4,5,6. colunas C,D,E)
+
+    for(int i = 0; i < 3; i++){
+        tabuleiro[3 + i][2 + i] = 3; 
+    }
+
+    //navio diagonal secundario (linhas 1,2,3. colunas J,I,H)
+
+    for (int i = 0; i < 3; i++){
+        tabuleiro[0 + i][9 - i] = 3; // incrementa linhas de 1 até 3 e decrementa colunas do J até H
+    }
+    
 
     //imprime cabecalho de A a J na coluna
         printf("   ");
